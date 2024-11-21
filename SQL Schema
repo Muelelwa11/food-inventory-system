@@ -1,0 +1,24 @@
+-- Create food categories table (optional)
+CREATE TABLE categories (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+);
+
+-- Create food items table
+CREATE TABLE foods (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    category_id INT,
+    price DECIMAL(10, 2),
+    FOREIGN KEY (category_id) REFERENCES categories(id)
+);
+
+-- Create inventory table
+CREATE TABLE inventory (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    food_id INT,
+    quantity INT,
+    last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (food_id) REFERENCES foods(id)
+);
