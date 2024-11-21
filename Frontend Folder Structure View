@@ -1,0 +1,9 @@
+// bash
+
+/frontend
+    /components
+        FoodList.js
+        InventoryList.js
+        AddFood.js
+    App.js
+    index.js
