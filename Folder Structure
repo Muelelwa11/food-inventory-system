@@ -1,0 +1,14 @@
+bash
+
+/backend
+    /controllers
+        foodController.js
+        inventoryController.js
+    /models
+        db.js
+        foodModel.js
+        inventoryModel.js
+    /routes
+        foodRoutes.js
+        inventoryRoutes.js
+    app.js
