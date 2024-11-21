@@ -1,0 +1,6 @@
+
+// bash
+
+npx create-react-app food-inventory
+cd food-inventory
+npm install axios
