@@ -1,0 +1,21 @@
+// javascript
+
+const express = require('express');
+const router = express.Router();
+const foodController = require('../controllers/foodController');
+
+router.get('/', foodController.getAllFoods);
+router.post('/', foodController.addFood);
+
+module.exports = router;
+Routes for Inventory (routes/inventoryRoutes.js):
+javascript
+
+const express = require('express');
+const router = express.Router();
+const inventoryController = require('../controllers/inventoryController');
+
+router.get('/', inventoryController.getInventory);
+router.put('/', inventoryController.updateInventory);
+
+module.exports = router;
