@@ -1,0 +1,24 @@
+// javascript
+
+const db = require('../models/db');
+
+// Get inventory status
+exports.getInventory = async (req, res) => {
+    try {
+        const [rows] = await db.query('SELECT * FROM inventory');
+        res.json(rows);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
+
+// Update inventory stock level
+exports.updateInventory = async (req, res) => {
+    const { food_id, quantity } = req.body;
+    try {
+        await db.query('UPDATE inventory SET quantity = ? WHERE food_id = ?', [quantity, food_id]);
+        res.status(200).json({ message: 'Inventory updated' });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
