@@ -1,0 +1,19 @@
+// javascript
+
+import React from 'react';
+import FoodList from './components/FoodList';
+import InventoryList from './components/InventoryList';
+import AddFood from './components/AddFood';
+
+const App = () => {
+    return (
+        <div>
+            <h1>Food Inventory Management</h1>
+            <AddFood />
+            <FoodList />
+            <InventoryList />
+        </div>
+    );
+};
+
+export default App;
